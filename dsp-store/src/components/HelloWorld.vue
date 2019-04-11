@@ -56,12 +56,16 @@
 		</div> <!--FIM DO CONTA_COPO -->
 
 		<div class="content vp">
-			<a id="ver_produtos" href="">Veja todos os produtos</a>
+			<a id="ver_produtos" href="/#/produtos">Veja todos os produtos</a>
 		</div> <!--FIM DO CONTENT VP-->
+
+		<div class="content rdp">
+			<a id="rdp" href=""></a>
+		</div> <!--FIM DO CONTENT rdp-->
 
 		<footer>
 			<div class="rpe">
-				<a id="rpe" href="https://www.instagram.com/calldasmatheus">Developed by: Matheus Caldas</a>
+				<a id="rpe" href="https://www.instagram.com/calldasmatheus">DSP DEVELOPMENT</a>
 			</div>
 		</footer>
 	</div> <!--FIM DA INTERFACE -->
@@ -210,7 +214,7 @@ img#logo{
 	padding: 5px 10px;
 	grid-column: 1/4;
 	height: 100px;
-	background-color: #00284d;
+	background-color: #2d4159;
 	margin-top: -5px;
 }
 
@@ -374,7 +378,7 @@ a#ver_produtos{
 	font-weight: bolder;
 	font-size: 30px;
 	float: right;
-	margin-top: 30px;
+	margin-top: 40px;
 	margin-right: 38%;
 }
 
@@ -382,22 +386,51 @@ a#ver_produtos:hover{
 	color: #003566;
 }
 
+.rdp{
+	border: 0px solid #000000;
+	padding: 5px 10px;
+	grid-column: 1/4;
+	height: 400px;
+	background-color: black;
+	background-image: url(../_imagens/logo_N.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-origin: padding-box;
+	background-clip: border-box;
+	background-size: 30%;
+
+	text-align: center;
+	margin-top: 0%;
+}
+
+a#rdp{
+	color: #004080;
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: 30px;
+	float: right;
+	margin-top: 30px;
+	margin-right: 38%;
+}
+
 .rpe{
 	border: 0px solid #000000;
 	padding: 5px 10px;
 	grid-column: 1/4;
-	height: 50px;
-	background-color: #004080;
+	height: 30px;
+	background-color: #2d4159;
 	text-align: center;
+	margin-bottom: -7px;
 }
 
 a#rpe{
 	color: white;
 	font-family: sans-serif;
 	font-weight: bolder;
-	font-size: 20px;
+	font-size: 15px;
 	float: right;
-	margin-top: 13px;
-	margin-right: 39.3%;
+	margin-top: 7px;
+	margin-right: 44%;
 }
 </style>

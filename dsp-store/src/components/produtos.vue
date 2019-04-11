@@ -1,9 +1,12 @@
 <template id="produtos">
+<!--eslint-disable-->
     <ul>
         <li v-for = "produto in produtos" :key="produto.id">
             {{produto.nome}} - {{produto.valor}}
         </li>
+        <a id="" href="/#/cadastroProdutos">Cadastrar Produtos</a>
     </ul>
+
 </template>
 
 <script>

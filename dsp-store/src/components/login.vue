@@ -1,6 +1,6 @@
 <template id="login">
 <!--eslint-disable-->
-    <div>
+    <div class="fundo">
         <div class="container">
 			    <div class="top">
 				    <a id="logo_top" href="index.html"> <img id="logo_p" src="../_imagens/dspg_logo_p.png"></a>
@@ -15,7 +15,7 @@
             <a class="links" id="paralogin"></a>
             <div class="content">
             <div id="login">
-        <form method="post" action="">
+        <form @submit="checkform" method="post" action="">
 
             <h1>Login</h1> 
                 <p> 
@@ -33,7 +33,7 @@
                 </p>
                 
 
-            <a id="" href="/#/cadastro">Quero me cadastrar</a>
+            <a id="cad" href="/#/cadastro">Quero me cadastrar</a>
 
         </form>
             </div>
@@ -90,6 +90,10 @@ export default {
     font-family: Arial,sans-serif;
   }
 
+.fundo{
+    background-color: #2d4159;
+}
+
   .container2{
       background-color: #2d4159;
       margin-top: -96px;
@@ -104,6 +108,10 @@ export default {
   /* esconde as ancoras da tela */
   a.links{
     display: none;
+  }
+
+  a#cad:hover{
+      color:#2d4159;
   }
 
   .content{

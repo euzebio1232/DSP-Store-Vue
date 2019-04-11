@@ -1,20 +1,39 @@
 <template id="cadastroProdutos">
-    <div>
+<!--eslint-disable-->
+    <div class="fundo">
+      <div class="container">
+			    <div class="top">
+				    <a id="logo_top" href="index.html"> <img id="logo_p" src="../_imagens/dspg_logo_p.png"></a>
+				    <a id="c" href="/#/login">ENTRAR</a>
+				    <a id="p" href="/#/produtos">PRODUTOS</a>
+				    <a id="s" href="">SOBRE</a>	
+		    	</div>	<!--FIM DO CONTENT -->
+
+		</div> <!--FIM DO CONTAINER -->
         <div class="container" >
         <a class="links" id="paracadastroProdutos"></a>
         <div class="content">
         <div id="cadastroProduto">
-        <form method="post" action=""> 
+        <form @submit="checkform" method="post" action=""> 
           <h1>Cadastro de Produtos</h1> 
-           
+
             <p> 
-                <label for="nome_prd">Nome do Produto</label>
-                <input v-model="nome" required="required" type="text" placeholder="Nome" />
+                <label for="categoria_prd">Categoria</label>
+                <select v-model="categoria" required="required">
+                    <option value="camisa">Camisa</option> 
+                    <option value="bone">Boné</option>
+                    <option value="copo">Copo</option>
+                </select>
             </p>
 
             <p> 
                 <label for="marca_prd">Marca do Produto</label>
                 <input v-model="marca" type="text" required="required" placeholder="Marca" />
+            </p>
+           
+            <p> 
+                <label for="nome_prd">Nome do Produto</label>
+                <input v-model="nome" required="required" type="text" placeholder="Nome" />
             </p>
 
             <p> 
@@ -35,15 +54,6 @@
             <p> 
                 <label for="descricao_prd">Descrição</label>
                 <input v-model="descricao" required="required" type="text" placeholder="Descrição"/> 
-            </p>
-            
-            <p> 
-                <label for="categoria_prd">Categoria</label>
-                <select v-model="categoria" required="required">
-                    <option value="camisa">Camisa</option> 
-                    <option value="bone">Boné</option>
-                    <option value="copo">Copo</option>
-                </select>
             </p>
 
             <p> 
@@ -77,11 +87,11 @@ export default {
     methods:{
         checkform: function (e) {
 
-            let headers = {
+            /*let headers = {
                 "x-access-token":window.localStorage.getItem("token")
-            }
+            }*/
 
-            let dados = {
+            let payload = {
                     categoria: this.categoria,
                     marca: this.marca,
                     nome: this.nome,
@@ -91,10 +101,10 @@ export default {
                     
             }
             
-            let payload = {
+            /*let payload = {
                 headers,
                 dados
-            }
+            }*/
 
             axios
             .post("http://localhost:3000/produtos", payload)
@@ -110,10 +120,16 @@ export default {
 
 <style>
 
-*, *:before, *:after {
+.fundo{
+  background-color: #2d4159;
+  height: 1100px;
+}
+
+*:before, *:after {
     margin:0;
     padding:0;
     font-family: Arial,sans-serif;
+    background-color: #2d4159; 
   }
    
   /* remove a linha dos links */
@@ -130,8 +146,9 @@ export default {
     width: 500px;
     min-height: 560px;    
     margin: 0px auto;
-    margin-top: 60px;
-    position: relative;   
+    margin-top: 0px;
+    position: relative;
+    margin-left: 200%;   
   }
 
   h1{
@@ -377,5 +394,70 @@ export default {
       transform: translateX(-20px);
     }
   }
+
+
+
+  
+.container{
+	display: grid;
+	grid-template-columns: 200px 2fr 1fr;
+	grid-gap: 0px;
+	grid-auto-rows: 100px;
+    margin-bottom: 60px;
+    
+}
+
+.top{
+	border: 0px solid #000000;
+	color: #ffffff;
+	background-color: #7777ff;
+	padding: 5px 10px;
+	grid-column: 1/4;
+	background-color:  #152236;
+	height: 62px;
+	box-shadow: black;
+	
+}
+
+a{
+	color: #00aeef;
+	text-decoration: none;
+	font-family: sans-serif; /*stratum2*/
+	text-shadow: white;
+	font-weight: bold;
+}
+
+a:hover{
+	color: white;
+}
+
+a#s{
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
+a#p{
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
+a#c{
+	float: right;
+	margin-top: 20px;
+	margin-right: 110px;
+}
+
+a#logo_top {
+	float: left;
+	margin-left: 120px;
+	margin-top: 5px;
+}
+
+img#logo_p {
+	width: 140px;
+	height: 50px;
+}
 
 </style>
