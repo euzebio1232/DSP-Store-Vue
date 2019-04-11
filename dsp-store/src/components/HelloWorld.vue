@@ -5,8 +5,8 @@
         <div class="container">
 			    <div class="top">
 				    <a id="logo_top" href="index.html"> <img id="logo_p" src="../_imagens/dspg_logo_p.png"></a>
-				    <a id="c" v-on:click='cadastroClick'>CADASTRO</a>
-				    <a id="p" href="">PRODUTOS</a>
+				    <a id="c" href="/#/login">ENTRAR</a>
+				    <a id="p" href="/#/produtos">PRODUTOS</a>
 				    <a id="s" href="">SOBRE</a>	
 		    	</div>	<!--FIM DO CONTENT -->
 
@@ -15,10 +15,10 @@
 		<div class="container_two">
 			
 			<div class="content top_baixo">
-				<a href=""><img id="camisa" src="../_imagens/camisa_logo_p.png"></a>
-				<a href=""><img id="bone" src="../_imagens/bone2_logo_p.png"></a>
-				<a href=""><img id="copo" src="../_imagens/copo2_logo_p.png"></a>
-				<a href=""><img id="adesivo" src="../_imagens/adesivo_logo_p.png"></a>
+				<a href="/#/produtos/camisa"><img id="camisa" src="../_imagens/camisa_logo_p.png"></a>
+				<a href="/#/produtos/boné"><img id="bone" src="../_imagens/bone2_logo_p.png"></a>
+				<a href="/#/produtos/copo"><img id="copo" src="../_imagens/copo2_logo_p.png"></a>
+				<a href="/#/produtos/adesivo"><img id="adesivo" src="../_imagens/adesivo_logo_p.png"></a>
 			</div> <!--FIM DO CONTENT top_baixo -->
 
 		</div> <!--FIM DO CONTAINER_Two -->
@@ -81,11 +81,6 @@ export default {
     }
   },
 
-  methods:{
-    cadastroClick: () => {
-      router.push({name: 'cadastro'})
-    }
-  }
 }
 </script>
 
