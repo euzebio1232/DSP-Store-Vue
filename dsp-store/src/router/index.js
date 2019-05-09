@@ -5,6 +5,9 @@ import cadastro from '@/components/cadastro'
 import login from '@/components/login'
 import cadastroProdutos from '@/components/cadastroProdutos'
 import produtos from '@/components/produtos'
+import teste from '@/components/teste'
+import card from '@/components/card'
+import cardItem from '@/components/cardItem'
 
 Vue.use(Router)
 
@@ -44,6 +47,24 @@ export default new Router({
       path: '/produtos',
       name: 'produtos',
       component: produtos
+    },
+
+    {
+      path: '/teste',
+      name: 'teste',
+      component: teste
+    },
+
+    {
+      path: '/card',
+      name: 'card',
+      component: card
+    },
+
+    {
+      path: '/cardItem/:id',
+      name: 'cardItem',
+      component: cardItem
     }
 
   ]

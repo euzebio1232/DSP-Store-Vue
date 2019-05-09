@@ -69,7 +69,7 @@ export default {
                 let token = response.data.token
                 window.localStorage.setItem("token", token)
             })
-
+            alert("Você está logado")
             e.preventDefault();
         }
     },
@@ -366,7 +366,7 @@ export default {
 	grid-template-columns: 200px 2fr 1fr;
 	grid-gap: 0px;
 	grid-auto-rows: 100px;
-    margin-bottom: 60px;
+  margin-bottom: 60px;
     
 }
 
