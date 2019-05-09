@@ -8,6 +8,7 @@ import produtos from '@/components/produtos'
 import teste from '@/components/teste'
 import card from '@/components/card'
 import cardItem from '@/components/cardItem'
+import carrinho from '@/components/carrinho'
 
 Vue.use(Router)
 
@@ -65,6 +66,12 @@ export default new Router({
       path: '/cardItem/:id',
       name: 'cardItem',
       component: cardItem
+    },
+
+    {
+      path: '/carrinho/:id',
+      name: 'carrinho',
+      component: carrinho
     }
 
   ]

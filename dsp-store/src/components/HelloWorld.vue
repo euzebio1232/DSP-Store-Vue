@@ -88,6 +88,7 @@
                             type="submit"
                             value="Logar"
                             class="btn btn-primary btn-block"
+                            @click="()=>ver(teste)"
                           >Entrar</button>
                         </div>
 
@@ -278,7 +279,12 @@ export default {
         alert("Você está logado");
       });
       e.preventDefault();
-    }
+    },
+
+    ver: function(categoria) {
+      this.$router.push("/teste/");
+    },
+
   }
 };
 </script>

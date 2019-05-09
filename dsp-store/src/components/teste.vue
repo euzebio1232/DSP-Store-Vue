@@ -1,9 +1,9 @@
-<template id="login">
+<template id="teste">
   <!--eslint-disable-->
-  <div>
-    <!-- Fixed navbar -->  
+  <div >
+    <!-- Fixed navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand"  href="index.html">
+      <a class="navbar-brand" href="#">
         <img class="logo" src="../_imagens/dspg_logo_p.png" height="40">
       </a>
       <button
@@ -33,61 +33,27 @@
             </a>
           </li>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">ENTRAR</a>
+          <ul class="nav navbar-nav navbar-right" >
+            <li class="nav-item dropdown" >
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" >MATHEUS</a>
               <ul id="login-dp" class="dropdown-menu">
                 <li>
                   <div class="row">
+
                     <div class="col-md-12">
-                      Entrar com
-                      <div class="social-buttons">
+                      MATHEUS
+                      <div class="buttons">
+
                         <a href="#" class="btn btn-fb">
-                          <i class="fa fa-facebook"></i> Facebook
+                          <i class="fa fa-facebook"></i>Perfil
                         </a>
+
                         <a href="#" class="btn btn-tw">
-                          <i class="fa fa-twitter"></i> Twitter
+                          <i class="fa fa-twitter"></i>Sair
                         </a>
-                      </div>ou
-                      <form @submit="checkform" class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                        <div class="form-group">
-
-                          <label class="sr-only" for="email_login">email</label>
-                          <input v-model="email" type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                          <label class="sr-only" for="senha_login">senha</label>
-                          <input v-model="senha" type="password" class="form-control" id="exampleInputPassword2" placeholder="Senha" required>
-                          
-                          <div class="help-block text-right">
-                            <a href>Esqueceu a senha?</a>
-                          </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-                          <button  type="submit" value="Logar" class="btn btn-primary btn-block">Entrar</button>
-                        </div>
-
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox"> Permanecer logado
-                          </label>
-                        </div>
-
-                      </form>
+                      </div>  
                     </div>
-                    <div class="bottom text-center">
-                      Novo por aqui?
-                      <a href="/#/cadastro">
-                        <b>Cadastre-se</b>
-                      </a>
-                    </div>
+                
                   </div>
                 </li>
               </ul>
@@ -99,16 +65,16 @@
 
     <div class="container_two">
       <div class="content top_baixo">
-        <a href="/#/produtos/camisa">
+        <a href="/#/produtos/Camisas">
           <img id="camisa" src="../_imagens/camisa_logo_p.png">
         </a>
-        <a href="/#/produtos/boné">
+        <a href="/#/produtos/Bonés">
           <img id="bone" src="../_imagens/bonezinho.png">
         </a>
-        <a href="/#/produtos/copo">
+        <a href="/#/produtos/Copos">
           <img id="copo" src="../_imagens/copo2_logo_p.png">
         </a>
-        <a href="/#/produtos/adesivo">
+        <a href="/#/produtos/Adesivos">
           <img id="adesivo" src="../_imagens/adesivinho.png">
         </a>
       </div>
@@ -172,97 +138,160 @@
     </div>
     <!--FIM DO CONTAINER SIDE -->
     <div class="cont">
-		<div class="conte camisa">
-            <a href="#">
-                <img class="logo-teste" src="../_imagens/abadatxt.png">
-            </a>
-        </div>
-	    <div class="conte descricao">
-			<p id="titulo">ABADÁ CARNAVAL 2019</p>
-			<button id="botao">SAIBA MAIS</button>
-		</div>
-	</div> <!--FIM DO CONT -->
+      <div class="conte camisa">
+        <a href="#">
+          <img class="logo-teste" src="../_imagens/abadatxt.png">
+        </a>
+      </div>
+      <div class="conte descricao">
+        <p id="titulo">ABADÁ CARNAVAL 2019</p>
+        <br>
+        <h4>Abadás desapegados 2019 sublimados</h4>
+        <h6 class="text-muted">REF: Abadá CL21</h6>
+        <button id="botao">SAIBA MAIS</button>
+      </div>
+    </div>
+    <!--FIM DO CONT -->
 
-		<div class="cont_bone">
-			<div class="conte_bone descricao_bone">
-				<p id="title_bone">BONÉ TRUCK 2019</p>
-				<button id="botao">SAIBA MAIS</button>
-			</div>
-			<div class="conte_bone bone">
-                <a href="#">
-                    <img class="logo-teste2" src="../_imagens/bonetxt.png">
-                </a>
-            </div>
-		</div> <!--FIM DO CONTA_BONE -->
+    <div class="cont_bone">
+      <div class="conte_bone descricao_bone">
+        <p id="title_bone">BONÉ TRUCK 2019</p>
+        <br>
+        <h4>Aba curva, tecido brim e tela, regulador de plástico</h4>
+        <h6 class="text-muted">REF: Boné CL21 CRAZY</h6>
+        <button id="botao">SAIBA MAIS</button>
+      </div>
+      <div class="conte_bone bone">
+        <a href="#">
+          <img class="logo-teste2" src="../_imagens/bonetxt.png">
+        </a>
+      </div>
+    </div>
+    <!--FIM DO CONTA_BONE -->
 
-		<div class="cont_copo">
-			<div class="conte_copo copo">
-                <a href="#">
-                    <img class="logo-teste3" src="../_imagens/copolgtxt.png">
-                </a>
-            </div>
-			<div class="conte_copo descricao_copo">
-				<p id="title_copo">COPO LONG DRINK 2019</p>
-				<button id="botao">SAIBA MAIS</button>
-			</div>
-		</div> <!--FIM DO CONTA_COPO -->
-        	<div class="content vp">
-			<a id="ver_produtos" href="/#/produtos">Veja todos os produtos</a>
-		</div> <!--FIM DO CONTENT VP-->
+    <div class="cont_copo">
+      <div class="conte_copo copo">
+        <a href="#">
+          <img class="logo-teste3" src="../_imagens/copolgtxt.png">
+        </a>
+      </div>
+      <div class="conte_copo descricao_copo">
+        <p id="title_copo">COPO LONG DRINK 2019</p>
+        <br>
+        <h4>Copo long drink modelo desapegados black</h4>
+        <h6 class="text-muted">REF:LD01</h6>
+        <button id="botao">SAIBA MAIS</button>
+      </div>
+    </div>
+    <!--FIM DO CONTA_COPO -->
+    <div class="content vp">
+      <a id="ver_produtos" href="/#/produtos">Veja todos os produtos</a>
+    </div>
+    <!--FIM DO CONTENT VP-->
 
-		<div class="content rdp">
-			<a id="rdp" href=""></a>
-		</div> <!--FIM DO CONTENT rdp-->
+    <div class="content rdp">
+      <a id="rdp" href></a>
+    </div>
+    <!--FIM DO CONTENT rdp-->
 
-        <footer>
-			<div class="rpe">
-				<a id="rpe" href="https://www.instagram.com/calldasmatheus">DSP DEVELOPMENT</a>
-			</div>
-		</footer>
+    <footer>
+      <div class="rpe">
+        <a id="rpe" href="https://www.instagram.com/calldasmatheus">DSP DEVELOPMENT</a>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-    template: "#login",
-    data() {
-       return {
-        email: "",
-        senha: "",
-    }},
+  template: "#teste",
+  data() {
+    return {
+      email: "",
+      senha: "",
+      produtos: []
+    };
+  },
 
-    methods:{
-        checkform: function (e) {
-            let payload = {
-                    email: this.email,
-                    senha: this.senha,
-            }
-       
-            axios
-            .post("http://localhost:3000/login", payload)
-            .then((response)=>{
-                let token = response.data.token
-                window.localStorage.setItem("token", token)
-                alert("Você está logado")
-            })
-            e.preventDefault();
-        }
+  created: function() {
+    let cat = this.$route.params.categoria;
+    let url = "http://localhost:3000/produtos/";
+    if (cat !== undefined) {
+      url += cat;
     }
-}
+
+    axios
+      .get(url)
+      .then(response => {
+        console.log(response.data);
+        this.produtos = response.data;
+      })
+      .catch(e => {
+        console.log("erro");
+      });
+  },
+
+  updated: function(l, a) {
+    let cat = this.$route.params.categoria;
+    let url = "http://localhost:3000/produtos/";
+    if (cat !== undefined) {
+      url += cat;
+    }
+
+    axios
+      .get(url)
+      .then(response => {
+        console.log(response.data);
+        this.produtos = response.data;
+      })
+      .catch(e => {
+        console.log("erro");
+      });
+  },
+
+  methods: {
+    checkform: function(e) {
+      let payload = {
+        email: this.email,
+        senha: this.senha
+      };
+
+      axios.post("http://localhost:3000/login", payload).then(response => {
+        let token = response.data.token;
+        window.localStorage.setItem("token", token);
+        alert("Você está logado");
+      });
+      e.preventDefault();
+    },
+
+    comprar: function(id) {
+      this.$router.push("/cardItem/" + id);
+    },
+
+    buscar: function(categoria) {
+      this.$router.push("/produtos/" + categoria);
+    },
+
+    ver: function(categoria) {
+      this.$router.push("/produtos/");
+    },
+
+  }
+};
 </script>
 
 <style>
 /* eslint-disable */
 
-a.navbar-brand{
-    margin-left: 110px;
+a.navbar-brand {
+  margin-left: 110px;
 }
 
-.navbar{
-    box-shadow: #000000;
+.navbar {
+  box-shadow: #000000;
 }
 
 .navbar-toggler-icon {
@@ -270,7 +299,8 @@ a.navbar-brand{
 }
 
 #login-dp {
-  min-width: 250px;
+  min-width: 150px;
+  height: 100px;
   padding: 14px 14px 0;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.8);
@@ -304,6 +334,8 @@ a.navbar-brand{
 .btn-tw {
   color: #fff;
   background-color: #55acee;
+  position: absolute;
+  margin-left: 4px;
 }
 .btn-tw:hover {
   color: #fff;
@@ -350,7 +382,6 @@ a.navbar-brand{
   grid-auto-rows: 100px;
   margin-top: 106px;
   margin-bottom: -78px;
-
 }
 
 .top_baixo {
@@ -358,9 +389,7 @@ a.navbar-brand{
   height: 62px;
   background-color: #2d4159;
   margin-top: -40px;
-
 }
-
 
 img#camisa {
   margin-top: 10px;
@@ -412,306 +441,300 @@ h1#n_produtos {
 }
 
 .cont {
-	display: grid;
-	grid-template-columns: 200px 200px;
-	grid-template-rows: 10px 10px;
-	grid-template-columns: 2fr 2fr;
-	grid-gap: 0px;
-	margin-top: -252px;
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 10px 10px;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 0px;
+  margin-top: -252px;
 }
 
 .conte {
-	color: #ffffff;
-	background-color: #7777ff;
-	padding: 5px 10px;
-	margin-left: 0px;
-	margin-top: 252px;
-	height: 390px;
-
+  color: #ffffff;
+  background-color: #7777ff;
+  padding: 5px 10px;
+  margin-left: 0px;
+  margin-top: 252px;
+  height: 390px;
 }
 
-.camisa{
-	background-repeat: no-repeat;
-	background-size: 100% 400px;
-	background-image: url(../_imagens/camisa_logo_g.png);
-    background-color: white;
-
+.camisa {
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  background-image: url(../_imagens/camisa_logo_g.png);
+  background-color: white;
 }
 
-.camisa:hover{
-    opacity:1;
-    -webkit-transition:all 250ms ease;
-    -moz-transition:all 250ms ease;
-    -ms-transition:all 250ms ease;
-    -o-transition:all 250ms ease;
-    transition:all 250ms ease
+.camisa:hover {
+  opacity: 1;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;
 }
 
-.logo-teste{
-    height: 103%;
-    width: 103.2%;
-    margin-left: -10px;
-    margin-top: -5px;
-    opacity:0;
-    -webkit-transition:all 250ms ease;
-    -moz-transition:all 250ms ease;
-    -ms-transition:all 250ms ease;
-    -o-transition:all 250ms ease;
-    transition:all 0.3s ease;
+.logo-teste {
+  height: 103%;
+  width: 103.2%;
+  margin-left: -10px;
+  margin-top: -5px;
+  opacity: 0;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 0.3s ease;
 }
 
-.logo-teste:hover{
-    opacity:1;
-    background-color: #00000081;
-    -webkit-transition:all 250ms ease;
-    -moz-transition:all 250ms ease;
-    -ms-transition:all 250ms ease;
-    -o-transition:all 250ms ease;
-    transition:all 0.3s ease
+.logo-teste:hover {
+  opacity: 1;
+  background-color: #00000081;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 0.3s ease;
 }
 
-.descricao{
-	background-color: #000000ea;
+.descricao {
+  background-color: #000000ea;
 }
 
-p#titulo{
-	text-align: center;
-	font-family: sans-serif;
-	font-weight: bolder;
-	color: white;
-	margin-top: 40px;
-	font-size: 30px;
+p#titulo {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: white;
+  margin-top: 40px;
+  font-size: 30px;
 }
 
-button#botao{
-	width: 150px;
-	height: 40px;
-	float: right;
-	margin-top: 165px;
-	margin-right: 260px;
-	background-color: transparent;
-	font-family: sans-serif;
-	font-weight: bold;
-    color: white;
-    border-radius: 50px;
+button#botao {
+  width: 150px;
+  height: 40px;
+  float: right;
+  margin-top: 90px;
+  margin-right: 260px;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  border-radius: 50px;
 }
 
-button#botao:hover{
-	color: black;
-	background-color: white;
+button#botao:hover {
+  color: black;
+  background-color: white;
 }
 
 .cont_bone {
-	display: grid;
-	grid-template-columns: 200px 200px;
-	grid-template-rows: 10px 10px;
-	grid-template-columns: 2fr 2fr;
-	grid-gap: 0px;
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 10px 10px;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 0px;
 }
 
 .conte_bone {
-	color: #ffffff;
-	background-color: #7777ff;
-	padding: 5px 10px;
-	margin-left: 0px;
-	margin-top: 622px;
-	height: 390px;
-
+  color: #ffffff;
+  background-color: #7777ff;
+  padding: 5px 10px;
+  margin-left: 0px;
+  margin-top: 622px;
+  height: 390px;
 }
 
-.bone{
-	background-repeat: no-repeat;
-	background-size: 100% 400px;
-	background-image: url(../_imagens/bone3_logo_g.png);
-	background-color: white;
+.bone {
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  background-image: url(../_imagens/bone3_logo_g.png);
+  background-color: white;
 }
 
-.logo-teste2{
-    height: 103%;
-    width: 103.2%;
-    margin-left: -10px;
-    margin-top: -5px;
-    opacity:0;
-    -webkit-transition:all 250ms ease;
-    -moz-transition:all 250ms ease;
-    -ms-transition:all 250ms ease;
-    -o-transition:all 250ms ease;
-    transition:all 0.3s ease;
+.logo-teste2 {
+  height: 103%;
+  width: 103.2%;
+  margin-left: -10px;
+  margin-top: -5px;
+  opacity: 0;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 0.3s ease;
 }
 
-.logo-teste2:hover{
-    opacity:1;
-    background-color: #00000081;
-    -webkit-transition:all 250ms ease;
-    -moz-transition:all 250ms ease;
-    -ms-transition:all 250ms ease;
-    -o-transition:all 250ms ease;
-    transition:all 0.3s ease
+.logo-teste2:hover {
+  opacity: 1;
+  background-color: #00000081;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 0.3s ease;
 }
 
-.descricao_bone{
-	background-color: #000000ea;
+.descricao_bone {
+  background-color: #000000ea;
 }
 
-p#title_bone{
-	text-align: center;
-	font-family: sans-serif;
-	font-weight: bolder;
-	color: white;
-	margin-top: 50px;
-	font-size: 30px;
+p#title_bone {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: white;
+  margin-top: 50px;
+  font-size: 30px;
 }
 
 .cont_copo {
-	display: grid;
-	grid-template-columns: 200px 200px;
-	grid-template-rows: 10px 10px;
-	grid-template-columns: 2fr 2fr;
-	grid-gap: 0px;
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 10px 10px;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 0px;
 }
 
 .conte_copo {
-	color: #ffffff;
-	background-color: #7777ff;
-	padding: 5px 10px;
-	margin-left: 0px;
-	margin-top: 992px;
-	height: 390px;
-
+  color: #ffffff;
+  background-color: #7777ff;
+  padding: 5px 10px;
+  margin-left: 0px;
+  margin-top: 992px;
+  height: 390px;
 }
 
-.copo{
-	background-repeat: no-repeat;
-	background-size: 100% 400px;
-	background-image: url(../_imagens/copo_logo_g.png);
-	background-color: white;
+.copo {
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  background-image: url(../_imagens/copo_logo_g.png);
+  background-color: white;
 }
 
-.logo-teste3{
-    height: 103%;
-    width: 103.2%;
-    margin-left: -10px;
-    margin-top: -5px;
-    opacity:0;
-    -webkit-transition:all 250ms ease;
-    -moz-transition:all 250ms ease;
-    -ms-transition:all 250ms ease;
-    -o-transition:all 250ms ease;
-    transition:all 0.3s ease;
+.logo-teste3 {
+  height: 103%;
+  width: 103.2%;
+  margin-left: -10px;
+  margin-top: -5px;
+  opacity: 0;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 0.3s ease;
 }
 
-.logo-teste3:hover{
-    opacity:1;
-    background-color: #00000081;
-    -webkit-transition:all 250ms ease;
-    -moz-transition:all 250ms ease;
-    -ms-transition:all 250ms ease;
-    -o-transition:all 250ms ease;
-    transition:all 0.3s ease
+.logo-teste3:hover {
+  opacity: 1;
+  background-color: #00000081;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 0.3s ease;
 }
 
-.copo:hover{
-	opacity: 1;
+.copo:hover {
+  opacity: 1;
 }
 
-.descricao_copo{
-	background-color:#000000ea;
+.descricao_copo {
+  background-color: #000000ea;
 }
 
-p#title_copo{
-	text-align: center;
-	font-family: sans-serif;
-	font-weight: bolder;
-	color: white;
-	margin-top: 50px;
-	font-size: 30px;
+p#title_copo {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: white;
+  margin-top: 50px;
+  font-size: 30px;
 }
 
-.vp{
-	border: 0px solid #000000;
-	padding: 5px 10px;
-	grid-column: 1/4;
-	height: 100px;
-	background-color: #fff;
-	text-align: center;
-    margin-top: 100.90%;
-    transition: 0.5s;
+.vp {
+  border: 0px solid #000000;
+  padding: 5px 10px;
+  grid-column: 1/4;
+  height: 100px;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 100.9%;
+  transition: 0.5s;
 }
 
-.vp:hover{
-    background-color: #2d4159;
-    transition: 0.8s;
+.vp:hover {
+  background-color: #2d4159;
+  transition: 0.8s;
 }
-a#ver_produtos{
-	color: #004080;
-	font-family: sans-serif;
-	font-weight: bolder;
-	font-size: 30px;
-	float: right;
-	margin-top: 20px;
-    margin-right: 38%;
-    text-decoration: none;
-}
-
-a#ver_produtos:hover{
-    color: #fff;
-    text-decoration: none;
-    transition: 0.6s;
+a#ver_produtos {
+  color: #004080;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 38%;
+  text-decoration: none;
 }
 
-.rdp{
-	border: 0px solid #000000;
-	padding: 5px 10px;
-	grid-column: 1/4;
-	height: 400px;
-	background-color: #000000ea;
-	background-image: url(../_imagens/logo_N.png);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-origin: padding-box;
-	background-clip: border-box;
-    background-size: 20%;
-    background-position-y: 50px;
-
-	text-align: center;
-	margin-top: 0%;
+a#ver_produtos:hover {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.6s;
 }
 
-a#rdp{
-	color: #004080;
-	font-family: sans-serif;
-	font-weight: bolder;
-	font-size: 30px;
-	float: right;
-	margin-top: 30px;
-	margin-right: 38%;
+.rdp {
+  border: 0px solid #000000;
+  padding: 5px 10px;
+  grid-column: 1/4;
+  height: 400px;
+  background-color: #000000ea;
+  background-image: url(../_imagens/logo_N.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: 20%;
+  background-position-y: 50px;
+
+  text-align: center;
+  margin-top: 0%;
 }
 
-.rpe{
-	border: 0px solid #000000;
-	padding: 5px 10px;
-	grid-column: 1/4;
-	height: 30px;
-	background-color: #2d4159;
-	text-align: center;
-	margin-bottom: -7px;
+a#rdp {
+  color: #004080;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  float: right;
+  margin-top: 30px;
+  margin-right: 38%;
 }
 
-a#rpe{
-	color: white;
-	font-family: sans-serif;
-	font-weight: bolder;
-	font-size: 15px;
-	float: right;
-	margin-top: -1px;
-	margin-right: 44%;
+.rpe {
+  border: 0px solid #000000;
+  padding: 5px 10px;
+  grid-column: 1/4;
+  height: 30px;
+  background-color: #2d4159;
+  text-align: center;
+  margin-bottom: -7px;
 }
 
-a#rpe:hover{
-    text-decoration: none;
-    color: #55acee;
+a#rpe {
+  color: white;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 15px;
+  float: right;
+  margin-top: -1px;
+  margin-right: 44%;
 }
-	
 
+a#rpe:hover {
+  text-decoration: none;
+  color: #55acee;
+}
 </style>
