@@ -9,6 +9,7 @@ import teste from '@/components/teste'
 import card from '@/components/card'
 import cardItem from '@/components/cardItem'
 import carrinho from '@/components/carrinho'
+import pedido from '@/components/pedido'
 
 Vue.use(Router)
 
@@ -72,7 +73,13 @@ export default new Router({
       path: '/carrinho/:id',
       name: 'carrinho',
       component: carrinho
-    }
+    },
+
+    {
+      path: '/pedido/:id',
+      name: 'pedido',
+      component: pedido
+    },
 
   ]
 })

@@ -1,4 +1,4 @@
-<template id="cadastro">
+<template id="login">
   <!--eslint-disable-->
   <div>
     <!-- Fixed navbar -->
@@ -32,62 +32,141 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">MATHEUS</a>
+              <ul id="login-dp" class="dropdown-menu">
+                <li>
+                  <div class="row">
+                    <div class="col-md-12">
+                      Entrar com
+                      <div class="social-buttons">
+                        <a href="#" class="btn btn-fb">
+                          <i class="fa fa-facebook"></i> Facebook
+                        </a>
+                      </div>ou
+                      <form
+                        @submit="checkform"
+                        class="form"
+                        role="form"
+                        method="post"
+                        action="login"
+                        accept-charset="UTF-8"
+                        id="login-nav"
+                      >
+                        <div class="form-group">
+                          <label class="sr-only" for="email_login">email</label>
+                          <input
+                            v-model="email"
+                            type="email"
+                            class="form-control"
+                            id="exampleInputEmail2"
+                            placeholder="Email"
+                            required
+                          >
+                        </div>
+
+                        <div class="form-group">
+                          <label class="sr-only" for="senha_login">senha</label>
+                          <input
+                            v-model="senha"
+                            type="password"
+                            class="form-control"
+                            id="exampleInputPassword2"
+                            placeholder="Senha"
+                            required
+                          >
+
+                          <div class="help-block text-right">
+                            <a href>Esqueceu a senha?</a>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <button
+                            type="submit"
+                            value="Logar"
+                            class="btn btn-primary btn-block"
+                          >Entrar</button>
+                        </div>
+
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox"> Permanecer logado
+                          </label>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="bottom text-center">
+                      Novo por aqui?
+                      <a href="/#/cadastro">
+                        <b>Cadastre-se</b>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </ul>
       </div>
     </nav>
 
-    <div class="container2">
-      <a class="links" id="paracadastro"></a>
-      <div id="cadastro">
-        <form @submit="checkform">
-          <h1>Cadastro de Usuário</h1>
-          <p>
-            <label id="nome" for="nome">Nome:</label>
-            <input v-model="nome" type="text" required="required" placeholder="Nome">
-          </p>
-
-          <p>
-            <label id="sobreN" for="sobrenome">Sobrenome:</label>
-            <input v-model="sobrenome" required="required" type="text" placeholder="Sobrenome">
-          </p>
-
-          <p>
-            <label id="email" for="email">E-mail:</label>
-            <input v-model="email" required="required" type="email" placeholder="contato@html.com">
-          </p>
-
-          <p>
-            <label id="sexo" for="sexo">Sexo:</label>
-            <select v-model="sexo" required="required">
-              <option value="m">Masculino</option>
-              <option value="f">Feminino</option>
-            </select>
-          </p>
-
-          <p>
-            <label id="cpf" for="cpf">CPF:</label>
-            <input v-model="cpf" required="required" type="text" placeholder="999.999.999-99">
-          </p>
-
-          <p>
-            <label id="senha" for="senha">Senha:</label>
-            <input v-model="senha" required="required" type="password" placeholder="********">
-          </p>
-
-          <p>
-            <label id="cat" for="categoria">Categoria:</label>
-            <select v-model="categoria" required="required">
-              <option value="adm">Administrador</option>
-              <option value="usr">Usuário</option>
-            </select>
-          </p>
-
-          <p>
-            <input type="submit" value="Cadastrar" @click="()=>buscar(teste)">
-          </p>
-        </form>
+    <div class="container_two">
+      <div class="content top_baixo">
+        <a href="/#/produtos/Camisas">
+          <img id="camisa" src="../_imagens/camisa_logo_p.png">
+        </a>
+        <a href="/#/produtos/Bonés">
+          <img id="bone" src="../_imagens/bonezinho.png">
+        </a>
+        <a href="/#/produtos/Copos">
+          <img id="copo" src="../_imagens/copo2_logo_p.png">
+        </a>
+        <a href="/#/produtos/Adesivos">
+          <img id="adesivo" src="../_imagens/adesivinho.png">
+        </a>
       </div>
+      <!--FIM DO CONTENT top_baixo -->
     </div>
+    <!--FIM DO CONTAINER_Two -->
+
+    <table class="table">
+        <div>
+            <h1>MEUS PEDIDOS</h1>
+        </div>
+        <div v-if="pedido !== undefined ">
+        <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">PRODUTO</th>
+          <th scope="col">PREÇO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+              <div class="col-md-2">
+            <img v-bind:src="pedido.imagem" class="card-img" alt="...">
+          </div>
+          </th>
+          <td>{{pedido.nome}}</td>
+          <td>R${{pedido.valor}}</td>
+        </tr>
+      </tbody>
+        </div>
+        <div v-else>
+        <h1>Nada encontrado</h1>
+      </div>
+    </table>
+
+
+
+    <div class="content vp">
+      <a id="ver_produtos" href="#" @click="()=>ver(produtos)">Veja todos os produtos</a>
+    </div>
+    <!--FIM DO CONTENT VP-->
 
     <div class="content rdp">
       <a id="rdp" href></a>
@@ -103,43 +182,126 @@
 </template>
 
 <script>
-import axios from "axios";
 /* eslint-disable */
+import axios from "axios";
+import { constants } from "crypto";
+
 export default {
-  template: "#cadastro",
+  template: "#login",
   data() {
     return {
-      categoria: "",
-      nome: "",
-      sobrenome: "",
       email: "",
-      sexo: "",
-      cpf: "",
-      senha: ""
+      senha: "",
+      produtos: [],
+      produto: {},
+      pedidos: [],
+      pedido: {}
     };
   },
 
-  methods: {
+  data() {
+    return {
+      pais: "",
+      estado: "",
+      cidade: "",
+      cep: "",
+      rua: "",
+      bairro: "",
+      numero: "",
+      contato: "",
+      produto: "",
+      valor: "",
+      imagem: ""
+    };
+  },
+
+  created: function() {
+    let id = this.$route.params.id;
+    let url = "http://localhost:3000/pedidos/";
+
+    axios
+      .get(url)
+      .then(response => {
+        this.pedidos = response.data;
+
+        this.pedido = this.pedidos.find(item => item.id == id);
+        console.log(this.pedido);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  },
+  updated: function() {
+    let id = this.$route.params.id;
+    let url = "http://localhost:3000/pedidos/";
+
+    axios
+      .get(url)
+      .then(response => {
+        this.pedidos = response.data;
+
+        this.pedido = this.pedidos.find(item => item.id == id);
+        console.log(this.pedido);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  },
+  /*methods: {
     checkform: function(e) {
       let payload = {
-        categoria: this.categoria,
-        nome: this.nome,
-        sobrenome: this.sobrenome,
         email: this.email,
-        sexo: this.sexo,
-        cpf: this.cpf,
         senha: this.senha
       };
 
-      axios.post("http://localhost:3000/usuarios", payload).then(response => {
+      axios.post("http://localhost:3000/login", payload).then(response => {
+        let token = response.data.token;
+        window.localStorage.setItem("token", token);
+        alert("Você está logado");
+      });
+      e.preventDefault();
+    },
+
+    ver: function(categoria) {
+      this.$router.push("/produtos/");
+    }
+  },*/
+
+  methods: {
+    checkform: function(e) {
+      /*let headers = {
+                "x-access-token":window.localStorage.getItem("token")
+            }*/
+
+      let payload = {
+        pais: this.pais,
+        estado: this.estado,
+        cidade: this.cidade,
+        cep: this.cep,
+        rua: this.rua,
+        bairro: this.bairro,
+        numero: this.numero,
+        contato: this.contato,
+        produto: this.produto.nome,
+        valor: this.produto.valor,
+        imagem: this.produto.imagem
+      };
+
+      /*let payload = {
+                headers,
+                dados
+            }*/
+
+      axios.post("http://localhost:3000/pedidos", payload).then(response => {
         console.log(response);
       });
 
       e.preventDefault();
     },
+
     buscar: function(categoria) {
-      alert("Usuário Cadastrado");
-      this.$router.push("/teste/");
+      alert("Compra realizada com sucesso");
+      this.$router.push("/produtos/");
     }
   }
 };
@@ -239,7 +401,7 @@ a.navbar-brand {
   grid-template-columns: 200px 2fr 1fr;
   grid-gap: 0px;
   grid-auto-rows: 100px;
-  margin-top: 0px;
+  margin-top: 106px;
   margin-bottom: -78px;
 }
 
@@ -250,6 +412,38 @@ a.navbar-brand {
   margin-top: -40px;
 }
 
+img#camisa {
+  margin-top: 10px;
+  height: 40px;
+  width: 50px;
+  margin-left: 560px;
+  float: left;
+}
+
+img#bone {
+  margin-top: 10px;
+  height: 40px;
+  width: 50px;
+  margin-left: 20px;
+  float: left;
+}
+
+img#copo {
+  margin-top: 10px;
+  height: 40px;
+  margin-left: 22px;
+  width: 30px;
+  float: left;
+}
+
+img#adesivo {
+  margin-top: 10px;
+  height: 40px;
+  margin-left: 20px;
+  width: 40px;
+  float: left;
+}
+
 .side {
   border: 0px solid #000000;
   padding: 5px 10px;
@@ -257,6 +451,64 @@ a.navbar-brand {
   height: 100px;
   background-color: #2d4159;
   margin-top: -5px;
+}
+
+h1#n_produtos {
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bolder;
+  margin-top: 23px;
+}
+
+.cont {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 10px 10px;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 0px;
+  margin-top: -252px;
+}
+
+.conte {
+  color: #ffffff;
+  background-color: #7777ff;
+  padding: 5px 10px;
+  margin-left: 0px;
+  margin-top: 252px;
+  height: 390px;
+}
+
+.vp {
+  border: 0px solid #000000;
+  padding: 5px 10px;
+  grid-column: 1/4;
+  height: 100px;
+  background-color: #2d4159;
+  text-align: center;
+  margin-top: 50px;
+  transition: 0.5s;
+}
+
+.vp:hover {
+  background-color: #2a5285;
+  transition: 0.8s;
+}
+a#ver_produtos {
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 38%;
+  text-decoration: none;
+}
+
+a#ver_produtos:hover {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.6s;
 }
 
 .rdp {
@@ -275,7 +527,7 @@ a.navbar-brand {
   background-position-y: 50px;
 
   text-align: center;
-  margin-top: -670px;
+  margin-top: 0%;
 }
 
 a#rdp {
@@ -313,16 +565,53 @@ a#rpe:hover {
   color: #55acee;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+#cardItem {
+  position: relative;
+  margin-left: 170px;
+  margin-top: 50px;
 }
+
+#desc {
+  text-align: left;
+}
+
+.center {
+  width: 150px;
+  margin: 0px auto;
+  margin-left: 0%;
+}
+
+#color {
+  color: #57bf6d;
+}
+
+.table{
+    margin-top: 50px;
+}
+
+h1{
+    color:#3b5998;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.col-md-2{
+    margin-left: 10%;
+
+}
+
+.table{
+    width: 1000px;
+    position: relative;
+    margin-left: 13%;
+}
+
+
 
 .container2 {
   background-color: white;
   margin-top: 7%;
-  margin-bottom: 50%;
+  margin-bottom: 0%;
 }
 
 h1 {
@@ -431,7 +720,7 @@ input[type="submit"] {
   font-size: 18px;
   border: 1px solid #fff;
   margin-bottom: 10px;
-  margin-left: -51px;
+  margin-left: -100px;
   text-shadow: 0 1px 1px #333;
 
   -webkit-border-radius: 5px;
@@ -629,31 +918,57 @@ img#logo_p {
 
 label#cat {
   position: absolute;
-  margin-left: 13px;
+  margin-left: 55px;
 }
 
-label#nome {
-  position: absolute;
-  margin-left: 40px;
-}
-
-label#email {
+label#marca {
   position: absolute;
   margin-left: 37px;
 }
 
-label#sexo {
+label#nome {
   position: absolute;
-  margin-left: 45px;
+  margin-left: 37px;
 }
 
-label#cpf {
+label#tam {
   position: absolute;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
-label#senha {
+label#valor {
   position: absolute;
-  margin-left: 36px;
+  margin-left: 57px;
 }
+
+label#dsc {
+  position: absolute;
+  margin-left: 56px;
+}
+
+label#est {
+  position: absolute;
+  margin-left: 43px;
+}
+
+label#ref {
+  position: absolute;
+  margin-left: 28px;
+}
+
+label#img {
+  position: absolute;
+  margin-left: -13px;
+}
+
+label#val {
+  position: absolute;
+  margin-left: 48px;
+}
+
+label#img {
+  position: absolute;
+  margin-left: 55px;
+}
+
 </style>

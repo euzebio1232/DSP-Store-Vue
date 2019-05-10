@@ -162,60 +162,80 @@
     </table>
 
     <div class="container2">
-      <a class="links" id="paracadastroProdutos"></a>
+      <a class="links" id="paracadastroEntrega"></a>
       <div class="content">
-        <div id="cadastroProduto">
+        <div id="cadastroEntrega">
           <form @submit="checkform" method="post" action>
             <h4>Entrega</h4>
 
             <p>
-              <label id="cat" for="categoria_prd">País:</label>
-              <select v-model="categoria" required="required">
+              <label id="cat" for="pais">País:</label>
+              <select v-model="pais" required="required">
                 <option value="brasil">Brasil</option>
               </select>
             </p>
 
             <p>
-              <label id="marca" for="marca_prd">Estado:</label>
-              <select v-model="marca" required="required" type="text" placeholder="Marca">
-                <option value="Desapegados">Paraíba</option>
-                <option value="Desapegados">Pernambuco</option>
-                <option value="Desapegados">Ceará</option>
-                <option value="Desapegados">Bahia</option>
+              <label id="marca" for="estado">Estado:</label>
+              <select v-model="estado" required="required" type="text" placeholder="Estado">
+                <option value="pb">Paraíba</option>
+                <option value="pe">Pernambuco</option>
+                <option value="ce">Ceará</option>
+                <option value="ba">Bahia</option>
               </select>
             </p>
 
             <p>
-              <label id="nome" for="nome_prd">Cidade:</label>
-              <input v-model="nome" required="required" type="text" placeholder="Nome da cidade">
+              <label id="nome" for="cidade">Cidade:</label>
+              <input v-model="cidade" required="required" type="text" placeholder="Nome da cidade">
             </p>
 
             <p>
-              <label id="valor" for="Valor_prd">Cep:</label>
-              <input v-model="valor" required="required" placeholder="Cep da cidade">
+              <label id="valor" for="cep">Cep:</label>
+              <input v-model="cep" required="required" placeholder="Cep da cidade">
             </p>
 
             <p>
-              <label id="dsc" for="descricao_prd">Rua:</label>
-              <input v-model="descricao" required="required" type="text" placeholder="Nome da rua">
+              <label id="dsc" for="rua">Rua:</label>
+              <input v-model="rua" required="required" type="text" placeholder="Nome da rua">
             </p>
 
             <p>
-              <label id="est" for="estoque_prd">Bairro:</label>
-              <input v-model="estoque" required="required" type="text" placeholder="Nome do bairro">
+              <label id="est" for="bairro">Bairro:</label>
+              <input v-model="bairro" required="required" type="text" placeholder="Nome do bairro">
             </p>
 
             <p>
-              <label id="ref" for="referencia_prd">Número:</label>
-              <input v-model="referencia" required="required" type="text" placeholder="Número da residência">
+              <label id="ref" for="numero">Número:</label>
+              <input v-model="numero" required="required" type="text" placeholder="Número da residência">
             </p>
 
             <p>
-              <label id="ref" for="referencia_prd">Contato:</label>
-              <input v-model="referencia" required="required" type="text" placeholder="Telefone para contato">
+              <label id="ref" for="contato">Contato:</label>
+              <input v-model="contato" required="required" type="text" placeholder="Telefone para contato">
             </p>
 
-            <p @click="()=>buscar(produtos)">
+            <p>
+              <label id="ref" for="produto" >Produto:</label>
+              <input v-model="produto.nome" required="required" type="text" disabled>
+            </p>
+
+            <p>
+              <label id="val" for="valor" >Valor:</label>
+              <input v-model="produto.valor" required="required" type="text" disabled>
+            </p>
+
+            <p>
+              <label id="img" for="imagem" >IMG:</label>
+              <input v-model="produto.imagem" required="required" type="text" disabled>
+            </p>
+
+            <p>
+              <label id="ref" for=""></label>
+              <h4>VALOR TOTAL: R${{produto.valor}}</h4>
+            </p>
+
+            <p @click="()=>comprar(pedidos.id)">
               <input type="submit" value="Finalizar Compra">
             </p>
           </form>
@@ -254,9 +274,28 @@ export default {
       email: "",
       senha: "",
       produtos: [],
-      produto: {}
+      produto: {},
+      pedidos: [],
+      pedido:{}
     };
   },
+
+  data() {
+    return {
+      pais: "",
+      estado: "",
+      cidade: "",
+      cep: "",
+      rua: "",
+      bairro: "",
+      numero: "",
+      contato: "",
+      produto: "",
+      valor: "",
+      imagem: ""
+    };
+  },
+
   created: function() {
     let id = this.$route.params.id;
     let url = "http://localhost:3000/produtos/";
@@ -289,7 +328,7 @@ export default {
         console.log(e);
       });
   },
-  methods: {
+  /*methods: {
     checkform: function(e) {
       let payload = {
         email: this.email,
@@ -307,6 +346,51 @@ export default {
     ver: function(categoria) {
       this.$router.push("/produtos/");
     }
+  },*/
+  
+
+  methods: {
+    checkform: function(e) {
+      /*let headers = {
+                "x-access-token":window.localStorage.getItem("token")
+            }*/
+
+      let payload = {
+        pais: this.pais,
+        estado: this.estado,
+        cidade: this.cidade,
+        cep: this.cep,
+        rua: this.rua,
+        bairro: this.bairro,
+        numero: this.numero,
+        contato: this.contato,
+        produto: this.produto.nome,
+        valor: this.produto.valor,
+        imagem: this.produto.imagem
+      };
+
+      /*let payload = {
+                headers,
+                dados
+            }*/
+
+      axios.post("http://localhost:3000/pedidos", payload).then(response => {
+        console.log(response);
+      });
+
+      e.preventDefault();
+    },
+
+    buscar: function(categoria) {
+      alert("Compra realizada com sucesso");
+      this.$router.push("/pedido/");
+    },
+
+    comprar: function(id) {
+        alert("Compra realizada com sucesso");
+      this.$router.push("/pedido/" +id);
+    },
+    
   }
 };
 </script>
@@ -963,6 +1047,16 @@ label#ref {
 label#img {
   position: absolute;
   margin-left: -13px;
+}
+
+label#val {
+  position: absolute;
+  margin-left: 48px;
+}
+
+label#img {
+  position: absolute;
+  margin-left: 55px;
 }
 
 </style>
